@@ -1,0 +1,9 @@
+{
+  "title": "What gender do you identify with?",
+  "description": "Please share how do you identify yourself",
+  "options": {
+    "female": "Female",
+    "male": "Male",
+    "other": "Other"
+  }
+}

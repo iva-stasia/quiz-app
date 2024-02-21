@@ -1,0 +1,14 @@
+{
+  "title": "What are your favorite topics?",
+  "description": "Choose up to 3 topics you like",
+  "options": {
+    "werewolf": "Werewolf",
+    "action": "Action",
+    "royalObsession": "Royal Obsession",
+    "romance": "Romance",
+    "youngAdult": "Young Adult",
+    "badBoy": "Bad Boy",
+    "billionaire": "Billionaire"
+  },
+  "buttonTitle": "Next"
+}

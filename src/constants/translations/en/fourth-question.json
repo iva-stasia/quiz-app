@@ -1,0 +1,14 @@
+{
+  "title": {
+    "start": "What do you",
+    "wordToHighlight": "hate",
+    "end": "the most in a book?"
+  },
+  "options": {
+    "lackOfLogic": "Lack of logic",
+    "slowSpeed": "A slow speed",
+    "lackOfHumor": "Lack of humor",
+    "wayTooEnergeticEnding": "Way too generic ending"
+  },
+  "buttonTitle": "Next"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "What is your preferred language?",
+  "description": "Choose language",
+  "options": {
+    "english": "English",
+    "french": "French",
+    "german": "German",
+    "spanish": "Spanish"
+  }
+}

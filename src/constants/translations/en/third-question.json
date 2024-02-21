@@ -1,0 +1,9 @@
+{
+  "title": "What is your age?",
+  "options": {
+    "18": "18-29 years",
+    "30": "30-39 years",
+    "40": "40-49 years",
+    "50": "50+"
+  }
+}

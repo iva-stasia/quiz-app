@@ -1,0 +1,9 @@
+{
+  "title": "Quel est votre genre ?",
+  "description": "Veuillez partager comment vous vous identifiez",
+  "options": {
+    "female": "Femme",
+    "male": "Homme",
+    "other": "Autre"
+  }
+}

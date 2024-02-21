@@ -1,0 +1,10 @@
+{
+  "title": "Qu'est-ce que vous détestez le plus dans un livre ?",
+  "options": {
+    "lackOfLogic": "Manque de logique",
+    "slowSpeed": "Une vitesse lente",
+    "lackOfHumor": "Manque d'humour",
+    "wayTooEnergeticEnding": "Fin trop générique"
+  },
+  "buttonTitle": "Suivant"
+}

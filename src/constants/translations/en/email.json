@@ -1,0 +1,14 @@
+{
+  "title": "Email",
+  "description": "Enter your email to get full access",
+  "inputPlaceholder": "Your email",
+  "agreement": {
+    "byContinuing": "By continuing I agree with",
+    "privacyPolicy": "Privacy policy",
+    "and": "and",
+    "termOfUse": "Terms of use."
+  },
+  "buttonTitle": "Next",
+  "emailInvalid": "Invalid email",
+  "emailEmpty": "This field cannot be empty"
+}
