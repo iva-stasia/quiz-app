@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import TitleWithDescription from "../../components/title-with-description/TitleWithDescription";
 import OptionList from "../../components/option-list/OptionList";
+import useNavigateWithDelay from "../../hooks/navigate-with-delay";
+import { NAVIGATION_DELAY } from "../../constants/common";
 
 const FirstStep = () => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const navigateWithDelay = useNavigateWithDelay();
 
   const options = [
     { text: t("firstQuestion.options.english"), code: "en" },
@@ -25,7 +26,7 @@ const FirstStep = () => {
 
     localStorage.setItem("question1", JSON.stringify(stepData));
     i18n.changeLanguage(value.code);
-    navigate("/quiz/2");
+    navigateWithDelay("/quiz/2", NAVIGATION_DELAY);
   };
 
   return (

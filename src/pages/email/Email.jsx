@@ -13,8 +13,7 @@ const Email = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [percentage, setPercentage] = useState(0);
-  // const [showLoader, setShowLoader] = useState(true);
-  const [showLoader, setShowLoader] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
 

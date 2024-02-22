@@ -1,4 +1,6 @@
+import { css } from "@emotion/react";
 import styled from "@emotion/styled";
+import { scalePulse } from "../../utils/animations";
 
 const Label = styled.label`
   margin-left: ${({ index }) => (index === 0 || index === 4 ? "20px" : "0")};
@@ -17,10 +19,19 @@ const Label = styled.label`
   cursor: pointer;
   font-size: 13px;
   font-weight: 600;
-  background-color: ${({ theme, isChecked }) => (isChecked ? `${theme.colors.accent}20` : theme.colors.optionBg)};
+  background-color: ${({ theme, isChecked, isStepConfirm }) =>
+    isChecked ? `${theme.colors.accent}20` : isStepConfirm ? `${theme.colors.optionBg}60` : theme.colors.optionBg};
   border: 2px solid;
-  border-color: ${({ theme, isChecked }) => (isChecked ? theme.colors.accent : theme.colors.optionBg)};
+  border-color: ${({ theme, isChecked, isStepConfirm }) =>
+    isChecked ? theme.colors.accent : isStepConfirm ? `${theme.colors.optionBg}60` : theme.colors.optionBg};
   border-radius: 50%;
+  transition: all 0.15s ease-in-out;
+  animation: ${({ isChecked, isStepConfirm }) =>
+    isChecked && isStepConfirm
+      ? css`
+          ${scalePulse} 0.5s ease-in-out 2
+        `
+      : ""};
 
   @media (min-width: 600px) {
     margin-left: 0;

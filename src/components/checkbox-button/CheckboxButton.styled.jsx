@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+
 import tickIcon from "../../assets/icons/tick.svg";
+import { scalePulse } from "../../utils/animations";
 
 const Label = styled.label`
   display: flex;
@@ -9,10 +12,19 @@ const Label = styled.label`
   padding: 26px 20px;
   cursor: pointer;
   font-size: 17px;
-  background-color: ${({ theme, isChecked }) => (isChecked ? `${theme.colors.accent}20` : theme.colors.optionBg)};
+  background-color: ${({ theme, isChecked, isStepConfirm }) =>
+    isChecked ? `${theme.colors.accent}20` : isStepConfirm ? `${theme.colors.optionBg}60` : theme.colors.optionBg};
   border: 2px solid;
-  border-color: ${({ theme, isChecked }) => (isChecked ? theme.colors.accent : theme.colors.optionBg)};
+  border-color: ${({ theme, isChecked, isStepConfirm }) =>
+    isChecked ? theme.colors.accent : isStepConfirm ? `${theme.colors.optionBg}60` : theme.colors.optionBg};
   border-radius: 16px;
+  transition: all 0.15s ease-in-out;
+  animation: ${({ isChecked, isStepConfirm }) =>
+    isChecked && isStepConfirm
+      ? css`
+          ${scalePulse} 0.5s ease-in-out 2
+        `
+      : ""};
 `;
 
 const Checkbox = styled.input`
@@ -35,8 +47,9 @@ const CheckboxIndicator = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  background-color: ${({ theme, isChecked }) => (isChecked ? theme.colors.accent : "#6d4376")};
-  border: 1px solid ${(props) => props.theme.colors.accent};
+  background-color: ${({ theme, isChecked, isStepConfirm }) =>
+    isChecked ? theme.colors.accent : isStepConfirm ? "#6d437660" : "#6d4376"};
+  border: 1px solid ${({ theme, isStepConfirm }) => (isStepConfirm ? `${theme.colors.accent}40` : theme.colors.accent)};
   transition: all 150ms ease-in-out;
 
   &::before {

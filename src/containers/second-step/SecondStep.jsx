@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import TitleWithDescription from "../../components/title-with-description/TitleWithDescription";
 import OptionList from "../../components/option-list/OptionList";
@@ -7,10 +6,12 @@ import OptionList from "../../components/option-list/OptionList";
 import femaleEmoji from "../../assets/emoji/female.png";
 import maleEmoji from "../../assets/emoji/male.png";
 import otherEmoji from "../../assets/emoji/other.png";
+import { NAVIGATION_DELAY } from "../../constants/common";
+import useNavigateWithDelay from "../../hooks/navigate-with-delay";
 
 const SecondStep = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigateWithDelay = useNavigateWithDelay();
 
   const options = [
     { text: t("secondQuestion.options.female"), icon: femaleEmoji },
@@ -27,7 +28,7 @@ const SecondStep = () => {
     };
 
     localStorage.setItem("question2", JSON.stringify(stepData));
-    navigate("/quiz/3");
+    navigateWithDelay("/quiz/3", NAVIGATION_DELAY);
   };
 
   return (

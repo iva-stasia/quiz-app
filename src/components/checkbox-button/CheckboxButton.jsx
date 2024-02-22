@@ -1,18 +1,18 @@
 import { Checkbox, CheckboxIndicator, Label } from "./CheckboxButton.styled";
 
-const CheckboxButton = ({ option, onClick, isChecked }) => {
+const CheckboxButton = ({ option, onChange, isChecked, isStepConfirm }) => {
   return (
     <div>
-      <Label isChecked={isChecked}>
+      <Label isChecked={isChecked} isStepConfirm={isStepConfirm}>
         <span>{option.text}</span>
         <Checkbox
           checked={isChecked}
           type="checkbox"
           onChange={() => {
-            onClick(option);
+            onChange(option);
           }}
         />
-        <CheckboxIndicator isChecked={isChecked} />
+        <CheckboxIndicator isChecked={isChecked} isStepConfirm={isStepConfirm} />
       </Label>
     </div>
   );

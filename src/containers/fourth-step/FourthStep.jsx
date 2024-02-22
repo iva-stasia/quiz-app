@@ -1,16 +1,18 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import TitleWithDescription from "../../components/title-with-description/TitleWithDescription";
 import OptionList from "../../components/option-list/OptionList";
 import { Highlight } from "./FourthStep.styled";
 import AppButton from "../../components/app-button/AppButton";
+import useNavigateWithDelay from "../../hooks/navigate-with-delay";
+import { NAVIGATION_DELAY } from "../../constants/common";
 
 const FourthStep = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigateWithDelay = useNavigateWithDelay();
   const [checked, setChecked] = useState([]);
+  const [isStepConfirm, setIsStepConfirm] = useState(false);
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("question4"));
@@ -49,7 +51,8 @@ const FourthStep = () => {
   };
 
   const handleAppButtonClick = () => {
-    navigate("/quiz/5");
+    setIsStepConfirm(true);
+    navigateWithDelay("/quiz/5", NAVIGATION_DELAY);
   };
 
   const Title = () => {
@@ -64,7 +67,13 @@ const FourthStep = () => {
   return (
     <>
       <TitleWithDescription title={<Title />} />
-      <OptionList options={options} multiselect onClick={handleCheckboxClick} checked={checked} />
+      <OptionList
+        options={options}
+        multiselect
+        onClick={handleCheckboxClick}
+        checked={checked}
+        isStepConfirm={isStepConfirm}
+      />
       <AppButton
         onClick={handleAppButtonClick}
         title={t("fourthQuestion.buttonTitle")}

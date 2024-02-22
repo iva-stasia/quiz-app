@@ -1,5 +1,4 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import TitleWithDescription from "../../components/title-with-description/TitleWithDescription";
@@ -14,11 +13,14 @@ import romanceEmoji from "../../assets/emoji/romance.png";
 import royalEmoji from "../../assets/emoji/royal.png";
 import youngEmoji from "../../assets/emoji/young.png";
 import badBoyEmoji from "../../assets/emoji/bad-boy.png";
+import { NAVIGATION_DELAY } from "../../constants/common";
+import useNavigateWithDelay from "../../hooks/navigate-with-delay";
 
 const FifthStep = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigateWithDelay = useNavigateWithDelay();
   const [checked, setChecked] = useState([]);
+  const [isStepConfirm, setIsStepConfirm] = useState(false);
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("question5"));
@@ -58,7 +60,8 @@ const FifthStep = () => {
   };
 
   const handleAppButtonClick = () => {
-    navigate("/email");
+    setIsStepConfirm(true);
+    navigateWithDelay("/email", NAVIGATION_DELAY);
   };
 
   return (
@@ -66,7 +69,7 @@ const FifthStep = () => {
       <PaddingContainer>
         <TitleWithDescription title={t("fifthQuestion.title")} description={t("fifthQuestion.description")} />
       </PaddingContainer>
-      <BubbleList options={options} onClick={handleCheckboxClick} checked={checked} />
+      <BubbleList options={options} onClick={handleCheckboxClick} checked={checked} isStepConfirm={isStepConfirm} />
       <PaddingContainer>
         <AppButton
           onClick={handleAppButtonClick}

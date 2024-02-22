@@ -1,12 +1,13 @@
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 
 import TitleWithDescription from "../../components/title-with-description/TitleWithDescription";
 import OptionList from "../../components/option-list/OptionList";
+import useNavigateWithDelay from "../../hooks/navigate-with-delay";
+import { NAVIGATION_DELAY } from "../../constants/common";
 
 const ThirdStep = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const navigateWithDelay = useNavigateWithDelay();
 
   const options = [
     { text: t("thirdQuestion.options.18") },
@@ -24,7 +25,7 @@ const ThirdStep = () => {
     };
 
     localStorage.setItem("question3", JSON.stringify(stepData));
-    navigate("/quiz/4");
+    navigateWithDelay("/quiz/4", NAVIGATION_DELAY);
   };
 
   return (

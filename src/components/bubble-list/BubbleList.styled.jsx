@@ -4,6 +4,7 @@ const Container = styled.div`
   overflow-x: auto;
   flex: 1;
   margin-top: 24px;
+  padding-top: 6px;
   scrollbar-width: none;
 
   &::-webkit-scrollbar {
@@ -12,7 +13,6 @@ const Container = styled.div`
 `;
 
 const BubblesContainer = styled.div`
-  // width: 415px;
   width: 430px;
   display: flex;
   flex-wrap: wrap;

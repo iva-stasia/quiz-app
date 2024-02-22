@@ -1,7 +1,7 @@
 import BubbleButton from "../bubble-button/BubbleButton";
 import { BubblesContainer, Container } from "./BubbleList.styled";
 
-const BubbleList = ({ options, onClick, checked }) => {
+const BubbleList = ({ options, onClick, checked, isStepConfirm }) => {
   return (
     <Container>
       <BubblesContainer>
@@ -9,7 +9,14 @@ const BubbleList = ({ options, onClick, checked }) => {
           const isChecked = checked.some((text) => text === option.text);
 
           return (
-            <BubbleButton index={index} key={option.text} option={option} onClick={onClick} isChecked={isChecked} />
+            <BubbleButton
+              index={index}
+              key={option.text}
+              option={option}
+              onClick={onClick}
+              isChecked={isChecked}
+              isStepConfirm={isStepConfirm}
+            />
           );
         })}
       </BubblesContainer>
