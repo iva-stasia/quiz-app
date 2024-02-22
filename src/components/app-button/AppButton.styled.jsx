@@ -11,7 +11,9 @@ const Button = styled.button`
   transition: background-color 0.15s ease-in-out;
 
   &:hover {
-    background-color: ${(props) => props.theme.colors.accent}90;
+    @media (min-width: 600px) {
+      background-color: ${(props) => props.theme.colors.accent}90;
+    }
   }
 
   &:disabled {

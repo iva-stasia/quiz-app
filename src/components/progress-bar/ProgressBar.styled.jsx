@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { QUESTION_COUNT } from "../../constants/common";
-import arrowLeftIcon from "../../assets/icons/arrow-left.svg";
 
 const Container = styled.div`
   padding-inline: 20px;
@@ -45,16 +44,9 @@ const BackButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.15s ease-in-out;
 
-  &::before {
-    content: url(${arrowLeftIcon});
-    display: inline-block;
-    width: 9px;
-    height: 13px;
-    transition: opacity 150ms ease-in-out;
-  }
-
-  &:disabled::before {
+  &:disabled {
     opacity: 0;
   }
 `;

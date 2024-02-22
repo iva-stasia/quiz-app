@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { BackButton, Container, CurrentStep, Nav, ProgressContainer, ProgressPointer } from "./ProgressBar.styled";
+import arrowLeftIcon from "../../assets/icons/arrow-left.svg";
 
 const ProgressBar = ({ quizStep }) => {
   const navigate = useNavigate();
@@ -13,7 +14,9 @@ const ProgressBar = ({ quizStep }) => {
   return (
     <Container>
       <Nav>
-        <BackButton onClick={handleClick} disabled={quizStep == 1} />
+        <BackButton onClick={handleClick} disabled={quizStep == 1}>
+          <img src={arrowLeftIcon} alt="Icon" />
+        </BackButton>
         <div>
           <CurrentStep>{quizStep}</CurrentStep>/5
         </div>

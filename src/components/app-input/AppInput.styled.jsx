@@ -2,7 +2,6 @@ import styled from "@emotion/styled";
 
 const InputContainer = styled.div`
   width: 100%;
-  // padding-bottom: ${({ error }) => (error ? "0" : "32px")};
 `;
 
 const Input = styled.input`
@@ -17,7 +16,9 @@ const Input = styled.input`
   transition: all 150ms ease-in-out;
 
   &:hover {
-    border-color: ${({ theme, error }) => (error ? theme.colors.errorColor : theme.colors.accent)};
+    @media (min-width: 600px) {
+      border-color: ${({ theme, error }) => (error ? theme.colors.errorColor : theme.colors.accent)};
+    }
   }
 
   &:focus-visible {

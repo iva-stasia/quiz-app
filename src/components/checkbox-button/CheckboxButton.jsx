@@ -1,4 +1,5 @@
-import { Checkbox, CheckboxIndicator, Label } from "./CheckboxButton.styled";
+import { Checkbox, CheckboxIndicator, Label, Icon } from "./CheckboxButton.styled";
+import tickIcon from "../../assets/icons/tick.svg";
 
 const CheckboxButton = ({ option, onChange, isChecked, isStepConfirm }) => {
   return (
@@ -12,7 +13,9 @@ const CheckboxButton = ({ option, onChange, isChecked, isStepConfirm }) => {
             onChange(option);
           }}
         />
-        <CheckboxIndicator isChecked={isChecked} isStepConfirm={isStepConfirm} />
+        <CheckboxIndicator isChecked={isChecked} isStepConfirm={isStepConfirm}>
+          <Icon src={tickIcon} alt="Icon" isChecked={isChecked} />
+        </CheckboxIndicator>
       </Label>
     </div>
   );

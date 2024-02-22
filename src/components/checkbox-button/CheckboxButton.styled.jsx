@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { css } from "@emotion/react";
 
-import tickIcon from "../../assets/icons/tick.svg";
 import { scalePulse } from "../../utils/animations";
 
 const Label = styled.label`
@@ -51,13 +50,12 @@ const CheckboxIndicator = styled.div`
     isChecked ? theme.colors.accent : isStepConfirm ? "#6d437660" : "#6d4376"};
   border: 1px solid ${({ theme, isStepConfirm }) => (isStepConfirm ? `${theme.colors.accent}40` : theme.colors.accent)};
   transition: all 150ms ease-in-out;
+`;
 
-  &::before {
-    content: url(${tickIcon});
-    display: "block";
+const Icon = styled.img`
     opacity: ${({ isChecked }) => (isChecked ? "1" : "0")};
     transition: opacity 150ms ease-in-out;
   }
 `;
 
-export { Label, Checkbox, CheckboxIndicator };
+export { Label, Checkbox, CheckboxIndicator, Icon };

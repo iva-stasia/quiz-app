@@ -2,13 +2,33 @@
   "title": "¿Cuáles son tus temas favoritos?",
   "description": "Elige hasta 3 temas que te gusten",
   "options": {
-    "werewolf": "Hombre lobo",
-    "action": "Acción",
-    "royalObsession": "Obsesión Real",
-    "romance": "Romance",
-    "youngAdult": "Joven Adulto",
-    "badBoy": "Chico Malo",
-    "billionaire": "Billionario"
+    "variant1": {
+      "werewolf": "Hombre lobo",
+      "action": "Acción",
+      "royalObsession": "Obsesión real",
+      "romance": "Romance",
+      "youngAdult": "Joven adulto",
+      "badBoy": "Chico malo",
+      "billionaire": "Multimillonario"
+    },
+    "variant2": {
+      "mystery": "Misterio",
+      "fantasy": "Fantasía",
+      "scienceFiction": "Ciencia ficción",
+      "historicalFiction": "Ficción histórica",
+      "thriller": "Suspenso",
+      "horror": "Terror",
+      "comedy": "Comedia"
+    },
+    "variant3": {
+      "mystery": "Misterio",
+      "fantasy": "Fantasía",
+      "scienceFiction": "Ciencia ficción",
+      "historicalFiction": "Ficción histórica",
+      "thriller": "Suspenso",
+      "horror": "Terror",
+      "comedy": "Comedia"
+    }
   },
   "buttonTitle": "Siguiente"
 }

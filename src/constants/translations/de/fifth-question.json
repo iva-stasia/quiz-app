@@ -1,14 +1,34 @@
 {
-  "title": "Was sind Ihre Lieblingsthemen?",
+  "title": "Was sind deine Lieblingsthemen?",
   "description": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
   "options": {
-    "werewolf": "Werwolf",
-    "action": "Action",
-    "royalObsession": "Königliche Obsession",
-    "romance": "Romantik",
-    "youngAdult": "Junge Erwachsene",
-    "badBoy": "Bad Boy",
-    "billionaire": "Milliardär"
+    "variant1": {
+      "werewolf": "Werwolf",
+      "action": "Action",
+      "royalObsession": "Königliche Obsession",
+      "romance": "Romantik",
+      "youngAdult": "Junge Erwachsene",
+      "badBoy": "Bad Boy",
+      "billionaire": "Milliardär"
+    },
+    "variant2": {
+      "mystery": "Mysterium",
+      "fantasy": "Fantasie",
+      "scienceFiction": "Science-Fiction",
+      "historicalFiction": "Historische Fiktion",
+      "thriller": "Thriller",
+      "horror": "Horror",
+      "comedy": "Komödie"
+    },
+    "variant3": {
+      "mystery": "Mysterium",
+      "fantasy": "Fantasie",
+      "scienceFiction": "Science-Fiction",
+      "historicalFiction": "Historische Fiktion",
+      "thriller": "Thriller",
+      "horror": "Horror",
+      "comedy": "Komödie"
+    }
   },
   "buttonTitle": "Weiter"
 }

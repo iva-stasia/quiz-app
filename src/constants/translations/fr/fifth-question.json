@@ -2,13 +2,33 @@
   "title": "Quels sont vos sujets préférés?",
   "description": "Choisissez jusqu'à 3 sujets que vous aimez",
   "options": {
-    "werewolf": "Loup-garou",
-    "action": "Action",
-    "royalObsession": "Obsession royale",
-    "romance": "Romance",
-    "youngAdult": "Jeune adulte",
-    "badBoy": "Mauvais garçon",
-    "billionaire": "Milliardaire"
+    "variant1": {
+      "werewolf": "Loup-garou",
+      "action": "Action",
+      "royalObsession": "Obsession royale",
+      "romance": "Romance",
+      "youngAdult": "Jeune adulte",
+      "badBoy": "Mauvais garçon",
+      "billionaire": "Milliardaire"
+    },
+    "variant2": {
+      "mystery": "Mystère",
+      "fantasy": "Fantaisie",
+      "scienceFiction": "Science-fiction",
+      "historicalFiction": "Fiction historique",
+      "thriller": "Thriller",
+      "horror": "Horreur",
+      "comedy": "Comédie"
+    },
+    "variant3": {
+      "mystery": "Mystère",
+      "fantasy": "Fantaisie",
+      "scienceFiction": "Science-fiction",
+      "historicalFiction": "Fiction historique",
+      "thriller": "Thriller",
+      "horror": "Horreur",
+      "comedy": "Comédie"
+    }
   },
   "buttonTitle": "Suivant"
 }

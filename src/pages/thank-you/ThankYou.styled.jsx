@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import downloadIcon from "../../assets/icons/download.svg";
 
 const Container = styled.div`
   margin-top: 74px;
@@ -34,12 +33,7 @@ const DownloadButton = styled.div`
   font-weight: 600;
   display: flex;
   align-items: center;
-
-  &::before {
-    content: url(${downloadIcon});
-    display: inline-block;
-    margin-right: 8px;
-  }
+  gap: 8px;
 `;
 
 export { Container, InnerContainer, Title, DownloadButton };

@@ -6,6 +6,7 @@ import { Container, DownloadButton, InnerContainer, Title } from "./ThankYou.sty
 import AppButton from "../../components/app-button/AppButton";
 
 import checkmarkIcon from "../../assets/icons/checkmark.png";
+import downloadIcon from "../../assets/icons/download.svg";
 import { headers } from "../../constants/csv-headers";
 import { userService } from "../../services/user-service";
 
@@ -29,7 +30,10 @@ const ThankYou = () => {
         <img src={checkmarkIcon} alt="Icon" width={118} />
       </InnerContainer>
       <CSVLink data={data} headers={headers} target="_blank" style={{}}>
-        <DownloadButton type="button">{t("thankYou.downloadButtonTitle")}</DownloadButton>
+        <DownloadButton type="button">
+          <img src={downloadIcon} alt="Icon" />
+          {t("thankYou.downloadButtonTitle")}
+        </DownloadButton>
       </CSVLink>
       <AppButton title={t("thankYou.buttonTitle")} onClick={handleAppButtonClick} />
     </Container>
