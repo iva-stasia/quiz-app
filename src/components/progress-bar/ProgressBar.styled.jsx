@@ -24,9 +24,11 @@ const ProgressContainer = styled.div`
 
 const ProgressPointer = styled.div`
   height: 4px;
-  width: ${(props) => `${(props.quizStep * 100) / QUESTION_COUNT}%`};
   background-color: ${(props) => props.theme.colors.accent};
   border-radius: 2px;
+  transform-origin: left;
+  transform: scaleX(${({ quizStep }) => `${(quizStep * 100) / QUESTION_COUNT}%`});
+  transition: transform 0.5s ease;
 `;
 
 const Nav = styled.nav`

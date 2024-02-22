@@ -6,15 +6,10 @@ import AppButton from "../../components/app-button/AppButton";
 import BubbleList from "../../components/bubble-list/BubbleList";
 import { PaddingContainer } from "./FifthStep.styled";
 
-import werewolfEmoji from "../../assets/emoji/werewolf.png";
-import actionEmoji from "../../assets/emoji/action.png";
-import billionaireEmoji from "../../assets/emoji/billionaire.png";
-import romanceEmoji from "../../assets/emoji/romance.png";
-import royalEmoji from "../../assets/emoji/royal.png";
-import youngEmoji from "../../assets/emoji/young.png";
-import badBoyEmoji from "../../assets/emoji/bad-boy.png";
 import { NAVIGATION_DELAY } from "../../constants/common";
 import useNavigateWithDelay from "../../hooks/navigate-with-delay";
+import { userService } from "../../services/user-service";
+import getOptions from "../../utils/get-options";
 
 const FifthStep = () => {
   const { t } = useTranslation();
@@ -23,7 +18,7 @@ const FifthStep = () => {
   const [isStepConfirm, setIsStepConfirm] = useState(false);
 
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("question5"));
+    const userData = userService.getUserDataByQuestion("question5");
     if (!userData || !userData.answer) return;
     setChecked(userData.answer.split(","));
   }, []);
@@ -36,18 +31,12 @@ const FifthStep = () => {
       answer: [checked].join(", "),
     };
 
-    localStorage.setItem("question5", JSON.stringify(stepData));
+    userService.updateUserData("question5", stepData);
   }, [checked]);
 
-  const options = [
-    { text: t("fifthQuestion.options.werewolf"), icon: werewolfEmoji },
-    { text: t("fifthQuestion.options.action"), icon: actionEmoji },
-    { text: t("fifthQuestion.options.royalObsession"), icon: royalEmoji },
-    { text: t("fifthQuestion.options.billionaire"), icon: billionaireEmoji },
-    { text: t("fifthQuestion.options.romance"), icon: romanceEmoji },
-    { text: t("fifthQuestion.options.youngAdult"), icon: youngEmoji },
-    { text: t("fifthQuestion.options.badBoy"), icon: badBoyEmoji },
-  ];
+  const userAge = userService.getUserDataByQuestion("question3").answer;
+  const optionsVariant = userAge === "18-29 years" || userAge === "30-39 years" ? "variant1" : "variant2";
+  const options = getOptions(t, "question5", optionsVariant);
 
   const handleCheckboxClick = (value) => {
     const valueInChecked = checked.find((option) => option === value.text);

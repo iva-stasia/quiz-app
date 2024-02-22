@@ -7,17 +7,15 @@ import AppButton from "../../components/app-button/AppButton";
 
 import checkmarkIcon from "../../assets/icons/checkmark.png";
 import { headers } from "../../constants/csv-headers";
-import { getFullUserData } from "../../utils/get-full-user-data";
+import { userService } from "../../services/user-service";
 
 const ThankYou = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const data = getFullUserData();
-
-  console.log(data);
+  const data = userService.getUserData();
 
   const handleAppButtonClick = () => {
-    localStorage.clear();
+    userService.deleteUserData();
     navigate("/quiz/1");
   };
 

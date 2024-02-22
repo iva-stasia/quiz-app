@@ -8,6 +8,7 @@ import AppInput from "../../components/app-input/AppInput";
 import AppButton from "../../components/app-button/AppButton";
 import { AgreementContainer, Container, InnerContainer, LinkTitle } from "./Email.styled";
 import { emailValidation } from "../../utils/validations";
+import { userService } from "../../services/user-service";
 
 const Email = () => {
   const { t } = useTranslation();
@@ -18,7 +19,7 @@ const Email = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("question6"));
+    const userData = userService.getUserDataByQuestion("question6");
     if (!userData || !userData.answer) return;
     setValue(userData.answer);
   }, []);
@@ -47,7 +48,7 @@ const Email = () => {
       answer: value,
     };
 
-    localStorage.setItem("question6", JSON.stringify(stepData));
+    userService.updateUserData("question6", stepData);
     navigate("/thank-you");
   };
 

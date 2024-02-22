@@ -2,13 +2,33 @@
   "title": "What are your favorite topics?",
   "description": "Choose up to 3 topics you like",
   "options": {
-    "werewolf": "Werewolf",
-    "action": "Action",
-    "royalObsession": "Royal Obsession",
-    "romance": "Romance",
-    "youngAdult": "Young Adult",
-    "badBoy": "Bad Boy",
-    "billionaire": "Billionaire"
+    "variant1": {
+      "werewolf": "Werewolf",
+      "action": "Action",
+      "royalObsession": "Royal Obsession",
+      "romance": "Romance",
+      "youngAdult": "Young Adult",
+      "badBoy": "Bad Boy",
+      "billionaire": "Billionaire"
+    },
+    "variant2": {
+      "mystery": "Mystery",
+      "fantasy": "Fantasy",
+      "scienceFiction": "Science Fiction",
+      "historicalFiction": "Historical Fiction",
+      "thriller": "Thriller",
+      "horror": "Horror",
+      "comedy": "Comedy"
+    },
+    "variant3": {
+      "mystery": "Mystery",
+      "fantasy": "Fantasy",
+      "scienceFiction": "Science Fiction",
+      "historicalFiction": "Historical Fiction",
+      "thriller": "Thriller",
+      "horror": "Horror",
+      "comedy": "Comedy"
+    }
   },
   "buttonTitle": "Next"
 }

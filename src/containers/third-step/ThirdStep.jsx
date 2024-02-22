@@ -4,17 +4,14 @@ import TitleWithDescription from "../../components/title-with-description/TitleW
 import OptionList from "../../components/option-list/OptionList";
 import useNavigateWithDelay from "../../hooks/navigate-with-delay";
 import { NAVIGATION_DELAY } from "../../constants/common";
+import { userService } from "../../services/user-service";
+import getOptions from "../../utils/get-options";
 
 const ThirdStep = () => {
   const { t } = useTranslation();
   const navigateWithDelay = useNavigateWithDelay();
 
-  const options = [
-    { text: t("thirdQuestion.options.18") },
-    { text: t("thirdQuestion.options.30") },
-    { text: t("thirdQuestion.options.40") },
-    { text: t("thirdQuestion.options.50") },
-  ];
+  const options = getOptions(t, "question3");
 
   const handleButtonClick = (value) => {
     const stepData = {
@@ -24,7 +21,7 @@ const ThirdStep = () => {
       answer: value.text,
     };
 
-    localStorage.setItem("question3", JSON.stringify(stepData));
+    userService.updateUserData("question3", stepData);
     navigateWithDelay("/quiz/4", NAVIGATION_DELAY);
   };
 

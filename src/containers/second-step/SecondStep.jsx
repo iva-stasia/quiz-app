@@ -3,21 +3,16 @@ import { useTranslation } from "react-i18next";
 import TitleWithDescription from "../../components/title-with-description/TitleWithDescription";
 import OptionList from "../../components/option-list/OptionList";
 
-import femaleEmoji from "../../assets/emoji/female.png";
-import maleEmoji from "../../assets/emoji/male.png";
-import otherEmoji from "../../assets/emoji/other.png";
 import { NAVIGATION_DELAY } from "../../constants/common";
 import useNavigateWithDelay from "../../hooks/navigate-with-delay";
+import { userService } from "../../services/user-service";
+import getOptions from "../../utils/get-options";
 
 const SecondStep = () => {
   const { t } = useTranslation();
   const navigateWithDelay = useNavigateWithDelay();
 
-  const options = [
-    { text: t("secondQuestion.options.female"), icon: femaleEmoji },
-    { text: t("secondQuestion.options.male"), icon: maleEmoji },
-    { text: t("secondQuestion.options.other"), icon: otherEmoji },
-  ];
+  const options = getOptions(t, "question2");
 
   const handleButtonClick = (value) => {
     const stepData = {
@@ -27,7 +22,7 @@ const SecondStep = () => {
       answer: value.text,
     };
 
-    localStorage.setItem("question2", JSON.stringify(stepData));
+    userService.updateUserData("question2", stepData);
     navigateWithDelay("/quiz/3", NAVIGATION_DELAY);
   };
 

@@ -7,6 +7,8 @@ import { Highlight } from "./FourthStep.styled";
 import AppButton from "../../components/app-button/AppButton";
 import useNavigateWithDelay from "../../hooks/navigate-with-delay";
 import { NAVIGATION_DELAY } from "../../constants/common";
+import { userService } from "../../services/user-service";
+import getOptions from "../../utils/get-options";
 
 const FourthStep = () => {
   const { t } = useTranslation();
@@ -15,7 +17,7 @@ const FourthStep = () => {
   const [isStepConfirm, setIsStepConfirm] = useState(false);
 
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("question4"));
+    const userData = userService.getUserDataByQuestion("question4");
     if (!userData || !userData.answer) return;
     setChecked(userData.answer.split(","));
   }, []);
@@ -30,15 +32,10 @@ const FourthStep = () => {
       answer: [checked].join(", "),
     };
 
-    localStorage.setItem("question4", JSON.stringify(stepData));
+    userService.updateUserData("question4", stepData);
   }, [checked]);
 
-  const options = [
-    { text: t("fourthQuestion.options.lackOfLogic") },
-    { text: t("fourthQuestion.options.slowSpeed") },
-    { text: t("fourthQuestion.options.lackOfHumor") },
-    { text: t("fourthQuestion.options.wayTooEnergeticEnding") },
-  ];
+  const options = getOptions(t, "question4");
 
   const handleCheckboxClick = (value) => {
     const valueInChecked = checked.find((option) => option === value.text);
