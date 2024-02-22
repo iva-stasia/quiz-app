@@ -1,0 +1,14 @@
+{
+  "title": "E-Mail",
+  "description": "Geben Sie Ihre E-Mail-Adresse ein, um vollen Zugriff zu erhalten",
+  "inputPlaceholder": "Ihre E-Mail-Adresse",
+  "agreement": {
+    "byContinuing": "Indem ich fortfahre, stimme ich zu",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "and": "und",
+    "termOfUse": "Nutzungsbedingungen."
+  },
+  "buttonTitle": "Weiter",
+  "emailInvalid": "Ungültige E-Mail-Adresse",
+  "emailEmpty": "Dieses Feld darf nicht leer sein"
+}

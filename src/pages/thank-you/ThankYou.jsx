@@ -14,6 +14,8 @@ const ThankYou = () => {
   const navigate = useNavigate();
   const data = getFullUserData();
 
+  console.log(data);
+
   const handleAppButtonClick = () => {
     localStorage.clear();
     navigate("/quiz/1");

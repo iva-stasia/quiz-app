@@ -14,9 +14,22 @@ const FourthStep = () => {
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("question4"));
-    if (!userData) return;
+    if (!userData || !userData.answer) return;
     setChecked(userData.answer.split(","));
   }, []);
+
+  useEffect(() => {
+    const stepData = {
+      order: "4",
+      title: `${t("fourthQuestion.title.start")} ${t("fourthQuestion.title.wordToHighlight")} ${t(
+        "fourthQuestion.title.end"
+      )}`,
+      type: "multiple-select",
+      answer: [checked].join(", "),
+    };
+
+    localStorage.setItem("question4", JSON.stringify(stepData));
+  }, [checked]);
 
   const options = [
     { text: t("fourthQuestion.options.lackOfLogic") },
@@ -36,16 +49,6 @@ const FourthStep = () => {
   };
 
   const handleAppButtonClick = () => {
-    const stepData = {
-      order: "4",
-      title: `${t("fourthQuestion.title.start")} ${t("fourthQuestion.title.wordToHighlight")} ${t(
-        "fourthQuestion.title.end"
-      )}`,
-      type: "multiple-select",
-      answer: [checked].join(", "),
-    };
-
-    localStorage.setItem("question4", JSON.stringify(stepData));
     navigate("/quiz/5");
   };
 

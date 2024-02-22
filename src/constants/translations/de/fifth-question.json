@@ -1,0 +1,14 @@
+{
+  "title": "Was sind Ihre Lieblingsthemen?",
+  "description": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+  "options": {
+    "werewolf": "Werwolf",
+    "action": "Action",
+    "royalObsession": "Königliche Obsession",
+    "romance": "Romantik",
+    "youngAdult": "Junge Erwachsene",
+    "badBoy": "Bad Boy",
+    "billionaire": "Milliardär"
+  },
+  "buttonTitle": "Weiter"
+}

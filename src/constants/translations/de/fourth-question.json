@@ -1,0 +1,14 @@
+{
+  "title": {
+    "start": "Was",
+    "wordToHighlight": "hassen",
+    "end": "Sie am meisten an einem Buch?"
+  },
+  "options": {
+    "lackOfLogic": "Mangel an Logik",
+    "slowSpeed": "Eine langsame Geschwindigkeit",
+    "lackOfHumor": "Mangel an Humor",
+    "wayTooEnergeticEnding": "Sehr generisches Ende"
+  },
+  "buttonTitle": "Weiter"
+}

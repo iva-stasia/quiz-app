@@ -3,21 +3,19 @@ import { useNavigate } from "react-router-dom";
 
 import TitleWithDescription from "../../components/title-with-description/TitleWithDescription";
 import OptionList from "../../components/option-list/OptionList";
-import languages from "../../constants/languages";
 
 const FirstStep = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
 
   const options = [
-    { text: t("firstQuestion.options.english") },
-    { text: t("firstQuestion.options.french") },
-    { text: t("firstQuestion.options.german") },
-    { text: t("firstQuestion.options.spanish") },
+    { text: t("firstQuestion.options.english"), code: "en" },
+    { text: t("firstQuestion.options.french"), code: "fr" },
+    { text: t("firstQuestion.options.german"), code: "de" },
+    { text: t("firstQuestion.options.spanish"), code: "es" },
   ];
 
   const handleButtonClick = (value) => {
-    const language = languages[value.text];
     const stepData = {
       order: "1",
       title: t("firstQuestion.title"),
@@ -26,7 +24,7 @@ const FirstStep = () => {
     };
 
     localStorage.setItem("question1", JSON.stringify(stepData));
-    i18n.changeLanguage(language);
+    i18n.changeLanguage(value.code);
     navigate("/quiz/2");
   };
 

@@ -13,13 +13,14 @@ const Email = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const [percentage, setPercentage] = useState(0);
-  const [showLoader, setShowLoader] = useState(true);
+  // const [showLoader, setShowLoader] = useState(true);
+  const [showLoader, setShowLoader] = useState(false);
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("question6"));
-    if (!userData) return;
+    if (!userData || !userData.answer) return;
     setValue(userData.answer);
   }, []);
 

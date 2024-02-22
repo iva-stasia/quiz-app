@@ -1,0 +1,14 @@
+{
+  "title": "¿Cuáles son tus temas favoritos?",
+  "description": "Elige hasta 3 temas que te gusten",
+  "options": {
+    "werewolf": "Hombre lobo",
+    "action": "Acción",
+    "royalObsession": "Obsesión Real",
+    "romance": "Romance",
+    "youngAdult": "Joven Adulto",
+    "badBoy": "Chico Malo",
+    "billionaire": "Billionario"
+  },
+  "buttonTitle": "Siguiente"
+}

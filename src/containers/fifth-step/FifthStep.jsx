@@ -22,10 +22,20 @@ const FifthStep = () => {
 
   useEffect(() => {
     const userData = JSON.parse(localStorage.getItem("question5"));
-    console.log(userData);
-    if (!userData) return;
+    if (!userData || !userData.answer) return;
     setChecked(userData.answer.split(","));
   }, []);
+
+  useEffect(() => {
+    const stepData = {
+      order: "5",
+      title: t("fifthQuestion.title"),
+      type: "bubble",
+      answer: [checked].join(", "),
+    };
+
+    localStorage.setItem("question5", JSON.stringify(stepData));
+  }, [checked]);
 
   const options = [
     { text: t("fifthQuestion.options.werewolf"), icon: werewolfEmoji },
@@ -48,14 +58,6 @@ const FifthStep = () => {
   };
 
   const handleAppButtonClick = () => {
-    const stepData = {
-      order: "5",
-      title: t("fifthQuestion.title"),
-      type: "bubble",
-      answer: [checked].join(", "),
-    };
-
-    localStorage.setItem("question5", JSON.stringify(stepData));
     navigate("/email");
   };
 

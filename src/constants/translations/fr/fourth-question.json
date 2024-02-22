@@ -1,10 +1,14 @@
 {
-  "title": "Qu'est-ce que vous détestez le plus dans un livre ?",
+  "title": {
+    "start": "Qu'est-ce que vous",
+    "wordToHighlight": "détestez",
+    "end": "le plus dans un livre?"
+  },
   "options": {
     "lackOfLogic": "Manque de logique",
-    "slowSpeed": "Une vitesse lente",
+    "slowSpeed": "Un rythme lent",
     "lackOfHumor": "Manque d'humour",
-    "wayTooEnergeticEnding": "Fin trop générique"
+    "wayTooEnergeticEnding": "Fin beaucoup trop générique"
   },
   "buttonTitle": "Suivant"
 }

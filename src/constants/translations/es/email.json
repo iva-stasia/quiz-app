@@ -1,0 +1,14 @@
+{
+  "title": "Correo electrónico",
+  "description": "Ingrese su correo electrónico para obtener acceso completo",
+  "inputPlaceholder": "Su correo electrónico",
+  "agreement": {
+    "byContinuing": "Al continuar, acepto",
+    "privacyPolicy": "la política de privacidad",
+    "and": "y",
+    "termOfUse": "los términos de uso."
+  },
+  "buttonTitle": "Siguiente",
+  "emailInvalid": "Correo electrónico inválido",
+  "emailEmpty": "Este campo no puede estar vacío"
+}

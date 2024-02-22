@@ -1,0 +1,14 @@
+{
+  "title": {
+    "start": "¿Qué es lo que",
+    "wordToHighlight": "odias",
+    "end": "más en un libro?"
+  },
+  "options": {
+    "lackOfLogic": "Falta de lógica",
+    "slowSpeed": "Velocidad lenta",
+    "lackOfHumor": "Falta de humor",
+    "wayTooEnergeticEnding": "Final demasiado genérico"
+  },
+  "buttonTitle": "Siguiente"
+}

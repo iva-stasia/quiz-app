@@ -1,7 +1,14 @@
 {
   "title": "Email",
-  "description": "Saisissez votre email électronique pour obtenir l'accès complet",
+  "description": "Entrez votre email pour obtenir un accès complet",
   "inputPlaceholder": "Votre email",
-  "agreement": "En continuant, j'accepte la politique de confidentialité et les conditions d'utilisation.",
-  "buttonTitle": "Suivant"
+  "agreement": {
+    "byContinuing": "En continuant, j'accepte",
+    "privacyPolicy": "la politique de confidentialité",
+    "and": "et",
+    "termOfUse": "les conditions d'utilisation."
+  },
+  "buttonTitle": "Suivant",
+  "emailInvalid": "Email invalide",
+  "emailEmpty": "Ce champ ne peut pas être vide"
 }
